@@ -37,7 +37,7 @@ public class ContratServiceImpl implements IContratService {
         validate(entity);
         existing.setDateSignature(entity.getDateSignature());
         existing.setMontantTotal(entity.getMontantTotal());
-        existing.setValide(entity.getValide());
+        existing.setValide(entity.isValide());
         existing.setReservation(entity.getReservation());
         return repository.save(existing);
     }
@@ -48,3 +48,4 @@ public class ContratServiceImpl implements IContratService {
         repository.deleteById(id);
     }
 }
+
