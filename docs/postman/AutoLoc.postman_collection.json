@@ -1,0 +1,1018 @@
+{
+  "info": {
+    "name": "AutoLoc",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Agences",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/agences",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "agences"
+              ]
+            },
+            "description": "Expected 200"
+          }
+        },
+        {
+          "name": "Get missing",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/agences/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "agences",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/agences",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "agences"
+              ]
+            },
+            "description": "Expected 201",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Agence API Demo\",\n  \"ville\": \"Tunis\",\n  \"adresse\": \"10 Avenue Habib Bourguiba\",\n  \"telephone\": \"71000000\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Update missing",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/agences/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "agences",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Agence API Demo\",\n  \"ville\": \"Tunis\",\n  \"adresse\": \"10 Avenue Habib Bourguiba\",\n  \"telephone\": \"71000000\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete missing",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/agences/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "agences",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Employes",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/employes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "employes"
+              ]
+            },
+            "description": "Expected 200"
+          }
+        },
+        {
+          "name": "Get missing",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/employes/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "employes",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/employes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "employes"
+              ]
+            },
+            "description": "Expected 201",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Ben Ali\",\n  \"prenom\": \"Sami\",\n  \"role\": \"AGENT\",\n  \"agence\": {\n    \"idAgence\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Update missing",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/employes/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "employes",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Ben Ali\",\n  \"prenom\": \"Sami\",\n  \"role\": \"AGENT\",\n  \"agence\": {\n    \"idAgence\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete missing",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/employes/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "employes",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vehicules",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/vehicules",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vehicules"
+              ]
+            },
+            "description": "Expected 200"
+          }
+        },
+        {
+          "name": "Get missing",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/vehicules/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vehicules",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/vehicules",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vehicules"
+              ]
+            },
+            "description": "Expected 201",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"immatriculation\": \"API-1000\",\n  \"marque\": \"Toyota\",\n  \"modele\": \"Yaris\",\n  \"categorie\": \"CITADINE\",\n  \"tarifJournalier\": 80.0,\n  \"statut\": \"DISPONIBLE\",\n  \"agence\": {\n    \"idAgence\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Update missing",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/vehicules/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vehicules",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"immatriculation\": \"API-1000\",\n  \"marque\": \"Toyota\",\n  \"modele\": \"Yaris\",\n  \"categorie\": \"CITADINE\",\n  \"tarifJournalier\": 80.0,\n  \"statut\": \"DISPONIBLE\",\n  \"agence\": {\n    \"idAgence\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete missing",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/vehicules/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vehicules",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Equipements",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/equipements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "equipements"
+              ]
+            },
+            "description": "Expected 200"
+          }
+        },
+        {
+          "name": "Get missing",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/equipements/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "equipements",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/equipements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "equipements"
+              ]
+            },
+            "description": "Expected 201",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"libelle\": \"GPS API Demo\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Update missing",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/equipements/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "equipements",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"libelle\": \"GPS API Demo\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete missing",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/equipements/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "equipements",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Clients",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/clients",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clients"
+              ]
+            },
+            "description": "Expected 200"
+          }
+        },
+        {
+          "name": "Get missing",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/clients/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clients",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/clients",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clients"
+              ]
+            },
+            "description": "Expected 201",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Ben Ali\",\n  \"prenom\": \"Sami\",\n  \"email\": \"sami.api@example.com\",\n  \"telephone\": \"22000000\",\n  \"numPermis\": \"API-PERMIT-1000\",\n  \"dateInscription\": \"2026-11-14\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Update missing",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/clients/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clients",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Ben Ali\",\n  \"prenom\": \"Sami\",\n  \"email\": \"sami.api@example.com\",\n  \"telephone\": \"22000000\",\n  \"numPermis\": \"API-PERMIT-1000\",\n  \"dateInscription\": \"2026-11-14\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete missing",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/clients/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clients",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reservations",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/reservations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "reservations"
+              ]
+            },
+            "description": "Expected 200"
+          }
+        },
+        {
+          "name": "Get missing",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/reservations/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "reservations",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/reservations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "reservations"
+              ]
+            },
+            "description": "Expected 201",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateDebut\": \"2026-12-01\",\n  \"dateFin\": \"2026-12-03\",\n  \"statut\": \"EN_ATTENTE\",\n  \"client\": {\n    \"idClient\": 1\n  },\n  \"vehicule\": {\n    \"idVehicule\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Update missing",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/reservations/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "reservations",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateDebut\": \"2026-12-01\",\n  \"dateFin\": \"2026-12-03\",\n  \"statut\": \"EN_ATTENTE\",\n  \"client\": {\n    \"idClient\": 1\n  },\n  \"vehicule\": {\n    \"idVehicule\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete missing",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/reservations/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "reservations",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Contrats",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/contrats",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "contrats"
+              ]
+            },
+            "description": "Expected 200"
+          }
+        },
+        {
+          "name": "Get missing",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/contrats/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "contrats",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/contrats",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "contrats"
+              ]
+            },
+            "description": "Expected 201",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateSignature\": \"2026-11-14\",\n  \"montantTotal\": 480.0,\n  \"valide\": true,\n  \"paiements\": [\n    {\n      \"montant\": 480.0,\n      \"datePaiement\": \"2026-11-14\",\n      \"modePaiement\": \"CARTE\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Update missing",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/contrats/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "contrats",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateSignature\": \"2026-11-14\",\n  \"montantTotal\": 480.0,\n  \"valide\": true,\n  \"paiements\": [\n    {\n      \"montant\": 480.0,\n      \"datePaiement\": \"2026-11-14\",\n      \"modePaiement\": \"CARTE\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete missing",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/contrats/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "contrats",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Maintenances",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/maintenances",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "maintenances"
+              ]
+            },
+            "description": "Expected 200"
+          }
+        },
+        {
+          "name": "Get missing",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/maintenances/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "maintenances",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/maintenances",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "maintenances"
+              ]
+            },
+            "description": "Expected 201",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateDebut\": \"2026-11-14\",\n  \"dateFin\": \"2026-11-15\",\n  \"description\": \"API demo maintenance\",\n  \"vehicule\": {\n    \"idVehicule\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Update missing",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/maintenances/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "maintenances",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateDebut\": \"2026-11-14\",\n  \"dateFin\": \"2026-11-15\",\n  \"description\": \"API demo maintenance\",\n  \"vehicule\": {\n    \"idVehicule\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete missing",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/maintenances/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "maintenances",
+                "9999"
+              ]
+            },
+            "description": "Expected 404 for missing resource"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Paiements",
+      "item": [
+        {
+          "name": "List payments",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/paiements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "paiements"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get missing payment",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/paiements/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "paiements",
+                "9999"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Write payment (expected 405)",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/paiements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "paiements"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
