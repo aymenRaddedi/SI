@@ -1013,6 +1013,104 @@
           }
         }
       ]
+    },
+    {
+      "name": "Affectations",
+      "item": [
+        {
+          "name": "Affecter une maintenance a un vehicule",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"maintenanceId\": 1,\n  \"vehiculeId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/affectations/maintenance",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "affectations",
+                "maintenance"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Affecter un equipement a un vehicule",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehiculeId\": 1,\n  \"equipementId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/affectations/equipement",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "affectations",
+                "equipement"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Valider les identifiants (400 attendu)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"maintenanceId\": 0,\n  \"vehiculeId\": -1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/affectations/maintenance",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "affectations",
+                "maintenance"
+              ]
+            }
+          }
+        }
+      ]
     }
   ]
 }
